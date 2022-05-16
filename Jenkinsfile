@@ -13,12 +13,12 @@ podTemplate(label: 'builder',
             volumes: [
                 hostPathVolume(mountPath: '/home/gradle/.gradle', hostPath: '/home/k8s/jenkins/.gradle'),
                 hostPathVolume(mountPath: '/var/run/docker.sock', hostPath: '/var/run/docker.sock'),
-                //hostPathVolume(mountPath: '/usr/bin/docker', hostPath: '/usr/bin/docker')
             ]) {
     node('builder') {
         stage('Build') {
             container('gradle') {
                 /* 도커 이미지를 활용하여 gradle 빌드를 수행하여 ./build/libs에 jar파일 생성 */
+                sh "gradle init"
                 sh "gradle -x test build"
             }
         }
