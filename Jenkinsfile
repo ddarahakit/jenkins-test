@@ -1,4 +1,4 @@
-def DOCKER_IMAGE_NAME = "ddarahakit/jenkins_test"           // 생성하는 Docker image 이름
+def DOCKER_IMAGE_NAME = "ddarahakit/jenkins-test"           // 생성하는 Docker image 이름
 def DOCKER_IMAGE_TAGS = "1.0"  // 생성하는 Docker image 태그
 def NAMESPACE = "ns-project"
 def VERSION = "${env.BUILD_NUMBER}"
